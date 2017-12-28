@@ -16,6 +16,7 @@
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
   const btnSignup = document.getElementById('btnSignup');
+  const btnLogout = document.getElementById('btnLogout');
 
   // Add login event
   btnLogin.addEventListener('click', e => {
