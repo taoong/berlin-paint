@@ -43,7 +43,11 @@
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
         console.log(firebaseUser);
-        window.location.replace("index.html");
+        if (firebaseUser.email == "taoong@berkeley.edu") {
+          window.location.replace("admin-index.html");
+        } else {
+          window.location.replace("index.html");
+        }
     } else {
         console.log('Not logged in');
     }
