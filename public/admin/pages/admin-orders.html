@@ -40,7 +40,7 @@
 
 </head>
 
-<body ng-app="app">
+<body ng-app="app" ng-controller="myCtrl as ctrl">
 
     <div id="wrapper">
 
@@ -161,14 +161,15 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="orders" ng-controller="myCtrl as ctrl">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="orders">
                                 <thead>
                                     <tr>
+                                        <th>Order Date</th>
                                         <th>Item ID</th>
                                         <th>Name</th>
+                                        <th>Quantity</th>
                                         <th>Type</th>
                                         <th>Order Status</th>
-                                        <th>Completed?</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -195,15 +196,19 @@
                                     <form role="form">
                                         <div class="form-group">
                                             <label>Item ID</label>
-                                            <input ng-model="orderID" class="form-control" placeholder="Item ID">
+                                            <input ng-model="itemID" class="form-control" placeholder="Item ID">
                                         </div>
                                         <div class="form-group">
                                             <label>Item Name</label>
-                                            <input ng-model="orderName" class="form-control" placeholder="Item Name">
+                                            <input ng-model="itemName" class="form-control" placeholder="Item Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Quantity</label>
+                                            <input ng-model="itemQuantity" class="form-control" placeholder="Quantity of Item">
                                         </div>
                                         <div class="form-group">
                                             <label>Item Type</label>
-                                            <select ng-model="orderType" class="form-control">
+                                            <select ng-model="itemType" class="form-control">
                                                 <option>General Coating</option>
                                                 <option>Fireproof</option>
                                                 <option>Custom</option>
@@ -218,13 +223,6 @@
                                                 <option>Completed</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Order Completed?</label>
-                                            <select ng-model="orderCompleted" class="form-control">
-                                                <option>Yes</option>
-                                                <option>No</option>
-                                            </select>
-                                        </div>
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
@@ -232,7 +230,7 @@
                                     <form role="form">
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" rows="8"></textarea>
+                                            <textarea ng-model="orderDescription" class="form-control" rows="8"></textarea>
                                         </div>
                                         <button ng-click="addItem()" style="float: right; margin-left: 10px" type="submit" class="btn btn-primary">Submit</button>
                                     </form>
@@ -248,9 +246,6 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div>
-                <h1 id="bigOne"></h1>
-            </div>
         </div>
         <!-- /#page-wrapper -->
 
