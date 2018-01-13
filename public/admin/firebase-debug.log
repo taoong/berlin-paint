@@ -85,3 +85,35 @@
     at process._tickDomainCallback (internal/process/next_tick.js:128:9)
 [error] 
 [error] Error: An unexpected error has occurred.
+[debug] [2018-01-12T21:14:58.230Z] ----------------------------------------------------------------------
+[debug] [2018-01-12T21:14:58.233Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-01-12T21:14:58.233Z] CLI Version:   3.16.0
+[debug] [2018-01-12T21:14:58.233Z] Platform:      darwin
+[debug] [2018-01-12T21:14:58.233Z] Node Version:  v6.11.4
+[debug] [2018-01-12T21:14:58.234Z] Time:          Fri Jan 12 2018 13:14:58 GMT-0800 (PST)
+[debug] [2018-01-12T21:14:58.234Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-12T21:14:58.249Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-12T21:14:58.249Z] > authorizing via signed-in user
+[debug] [2018-01-12T21:14:58.253Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/berlin-83c24  
+  
+ Fri Jan 12 2018 13:14:58 GMT-0800 (PST)
+[debug] [2018-01-12T21:14:58.773Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-12T21:14:58.774Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/berlin-83c24/tokens  
+  
+ Fri Jan 12 2018 13:14:58 GMT-0800 (PST)
+[debug] [2018-01-12T21:14:59.246Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/taoong/Desktop/Projects/Websites/berlin-paint'...
+[info] 
+[debug] [2018-01-12T21:14:59.249Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/berlin-83c24  
+  
+ Fri Jan 12 2018 13:14:59 GMT-0800 (PST)
+[debug] [2018-01-12T21:14:59.745Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-12T21:14:59.746Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/301683329371/clients/_:getWebAppConfig  
+  
+ Fri Jan 12 2018 13:14:59 GMT-0800 (PST)
+[debug] [2018-01-12T21:15:00.205Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+

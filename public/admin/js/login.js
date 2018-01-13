@@ -36,7 +36,10 @@
     const auth = firebase.auth();
     // Sign in
     const promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message));
+    promise.catch(e => {
+      document.getElementById('errorMessage').innerHTML = e.message;
+      console.log(e.message);
+    });
   })
 
   // Add a realtime listener
