@@ -512,3 +512,10 @@ csmall2 {
 	margin-top: -5px;
 	padding-right: 10px;
 }
+
+#errorMessage {
+	margin-left: 10px;
+	margin-top: -5px;
+	padding-left: 10px;
+	color: red;
+}

@@ -18,6 +18,8 @@
   const btnSignup = document.getElementById('btnSignup');
   const btnLogout = document.getElementById('btnLogout');
 
+  var ref = firebase.database().ref();
+
   // Add login event
   btnLogin.addEventListener('click', e => {
     // Get email and pass
@@ -26,7 +28,10 @@
     const auth = firebase.auth();
     // Sign in
     const promise = auth.signInWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message));
+    promise.catch(e => {
+      console.log(e.message);
+      document.getElementById('errorMessage').innerHTML = e.message;
+    });
   })
 
   // Add signup event
@@ -38,19 +43,38 @@
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => {
       document.getElementById('errorMessage').innerHTML = e.message;
-      console.log(e.message);
     });
   })
 
   // Add a realtime listener
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
-        console.log(firebaseUser);
-        if (firebaseUser.email == "taoong@berkeley.edu") {
-          window.location.replace("admin-index.html");
-        } else {
-          window.location.replace("index.html");
+      // Get authentication data
+      var userID = firebaseUser.uid;
+      ref.child('users').child(userID).once('value', function(snapshot) {
+        var exists = (snapshot.val() !== null);
+        // if first time logging in
+        if (!exists) {
+          var newUser = {
+            user_id: userID,
+            email: firebaseUser.email,
+            emailVerified: firebaseUser.emailVerified,
+            dateCreated: new Date().toJSON().slice(0,10),
+            admin: false
+          };
+          var updates = {};
+          updates['users/' + userID] = newUser;
+          firebase.database().ref().update(updates);
+          alert('Your account was created successfully!');
         }
+        ref.child('users').child(userID).once('value', function(snapshot) {
+          if (snapshot.val().admin) {
+            window.location.replace("admin-index.html");
+          } else {
+            window.location.replace("index.html");
+          }
+        }); 
+      });
     } else {
         console.log('Not logged in');
     }

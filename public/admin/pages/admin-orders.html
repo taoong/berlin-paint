@@ -11,6 +11,9 @@
 
     <title>Berlin Paint</title>
 
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,9 +31,6 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
@@ -252,30 +252,6 @@
     </div>
     <!-- /#wrapper -->
 
-
-    <!--
-    BACKUP ANGULAR JS
-
-    <script>
-    var app = angular.module("app", []); 
-    app.controller("myCtrl", function($scope) {
-        $scope.orders = [["ABC123", "Paint A", "Fireproof", "Delivering", "Yes"]];
-        $scope.addItem = function () {
-            $scope.errortext = "";
-            if ($scope.orders.indexOf($scope.addMe) == -1) {
-                $scope.orders.push([$scope.orderID, $scope.orderName, $scope.orderType, $scope.orderStatus, $scope.orderCompleted]);
-            } else {
-                $scope.errortext = "The item is already in your shopping list.";
-            }
-        }
-        $scope.removeItem = function (x) {
-            $scope.errortext = "";
-            $scope.orders.splice(x, 1);
-        } 
-    });
-    </script>
-    -->
-
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
 
@@ -304,7 +280,19 @@
 
 
     <!-- Custom App JS -->
+    <script>
+        var config = {
+            apiKey: "AIzaSyAAc3bIDjN1BBAajWvD7aIG2sz0z8UadHM",
+            authDomain: "berlin-83c24.firebaseapp.com",
+            databaseURL: "https://berlin-83c24.firebaseio.com",
+            projectId: "berlin-83c24",
+            storageBucket: "berlin-83c24.appspot.com",
+            messagingSenderId: "301683329371"
+          };
+        firebase.initializeApp(config); 
+    </script>
     <script src="../js/app.js"></script>
+    <script src="../js/logout.js"></script>
 
 </body>
 

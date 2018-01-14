@@ -1,19 +1,16 @@
 // Initialize Firebase
 
 (function() {
-  var config = {
-    apiKey: "AIzaSyAAc3bIDjN1BBAajWvD7aIG2sz0z8UadHM",
-    authDomain: "berlin-83c24.firebaseapp.com",
-    databaseURL: "https://berlin-83c24.firebaseio.com",
-    projectId: "berlin-83c24",
-    storageBucket: "berlin-83c24.appspot.com",
-    messagingSenderId: "301683329371"
-  };
-  firebase.initializeApp(config);
 
   var dbOrders = firebase.database().ref().child('orders/');
 
   var ordersTable = $('#orders').DataTable();
+
+  $('#orders').on( 'click', 'tbody td:not(:first-child)', function (e) {
+        editor.inline( this, {
+            onBlur: 'submit'
+        } );
+    } );
 
   dbOrders.on("child_added", snap => {
     var dataset = [snap.child("order_date").val(), snap.child("item_id").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("type").val(), snap.child("order_status").val()];
@@ -34,7 +31,7 @@
 
         var orderID = dbOrders.push().key;
         var data = {
-          order_date: Date.now(),
+          order_date: new Date().toJSON().slice(0,10),
           item_id: $scope.itemID,
           name: $scope.itemName,
           quantity: $scope.itemQuantity,
@@ -43,6 +40,7 @@
           description: $scope.orderDescription,
           reviewed: false
         }
+        console.log(new Date().toJSON().slice(0,10));
         var updates = {};
         updates['/orders/' + orderID] = data;
         firebase.database().ref().update(updates);
@@ -54,6 +52,8 @@
         $scope.orders.splice(x, 1);
       } 
     });
+
+
 
 }());
   

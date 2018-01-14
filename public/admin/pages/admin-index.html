@@ -11,6 +11,9 @@
 
     <title>Berlin Paint</title>
 
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -26,12 +29,8 @@
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
 </head>
 
@@ -199,9 +198,18 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-    <script src="../js/logout.js"></script>
+    <!-- Firebase Initializing -->
+    <script>
+        var config = {
+            apiKey: "AIzaSyAAc3bIDjN1BBAajWvD7aIG2sz0z8UadHM",
+            authDomain: "berlin-83c24.firebaseapp.com",
+            databaseURL: "https://berlin-83c24.firebaseio.com",
+            projectId: "berlin-83c24",
+            storageBucket: "berlin-83c24.appspot.com",
+            messagingSenderId: "301683329371"
+          };
+        firebase.initializeApp(config); 
+    </script>
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
@@ -212,11 +220,12 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-
-
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- Custom App JS -->
+    <script src="../js/app.js"></script>
+    <script src="../js/logout.js"></script>
 
 </body>
 

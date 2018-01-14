@@ -1,119 +1,41 @@
-[debug] [2018-01-11T04:43:26.072Z] ----------------------------------------------------------------------
-[debug] [2018-01-11T04:43:26.076Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2018-01-11T04:43:26.076Z] CLI Version:   3.16.0
-[debug] [2018-01-11T04:43:26.076Z] Platform:      darwin
-[debug] [2018-01-11T04:43:26.076Z] Node Version:  v6.11.4
-[debug] [2018-01-11T04:43:26.077Z] Time:          Wed Jan 10 2018 20:43:26 GMT-0800 (PST)
-[debug] [2018-01-11T04:43:26.077Z] ----------------------------------------------------------------------
+[debug] [2018-01-14T17:17:53.156Z] ----------------------------------------------------------------------
+[debug] [2018-01-14T17:17:53.158Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-01-14T17:17:53.159Z] CLI Version:   3.16.0
+[debug] [2018-01-14T17:17:53.159Z] Platform:      darwin
+[debug] [2018-01-14T17:17:53.159Z] Node Version:  v6.11.4
+[debug] [2018-01-14T17:17:53.159Z] Time:          Sun Jan 14 2018 09:17:53 GMT-0800 (PST)
+[debug] [2018-01-14T17:17:53.159Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-01-11T04:43:26.088Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-01-11T04:43:26.089Z] > authorizing via signed-in user
-[debug] [2018-01-11T04:43:26.091Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-01-11T04:43:26.091Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2018-01-14T17:17:53.173Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-14T17:17:53.173Z] > authorizing via signed-in user
+[debug] [2018-01-14T17:17:53.176Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-01-14T17:17:53.176Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  { refresh_token: '1/O9Xt8fxsf1aptXIlJTrtrBfUrNNyGyEVf2-gbXKjOz4',
   client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
   client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
   grant_type: 'refresh_token',
   scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Wed Jan 10 2018 20:43:26 GMT-0800 (PST)
-[debug] [2018-01-11T04:43:26.589Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-11T04:43:26.606Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/berlin-83c24  
+ Sun Jan 14 2018 09:17:53 GMT-0800 (PST)
+[debug] [2018-01-14T17:17:54.595Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-14T17:17:54.610Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/berlin-83c24  
   
- Wed Jan 10 2018 20:43:26 GMT-0800 (PST)
-[debug] [2018-01-11T04:43:28.525Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-11T04:43:28.526Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/berlin-83c24/tokens  
+ Sun Jan 14 2018 09:17:54 GMT-0800 (PST)
+[debug] [2018-01-14T17:17:56.511Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-14T17:17:56.512Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/berlin-83c24/tokens  
   
- Wed Jan 10 2018 20:43:28 GMT-0800 (PST)
-[debug] [2018-01-11T04:43:30.163Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from '/Users/taoong/Desktop/Projects/Websites/berlin-paint/admin'...
-[info] 
-[debug] [2018-01-11T04:43:30.167Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/berlin-83c24  
-  
- Wed Jan 10 2018 20:43:30 GMT-0800 (PST)
-[debug] [2018-01-11T04:43:31.086Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-11T04:43:31.086Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/301683329371/clients/_:getWebAppConfig  
-  
- Wed Jan 10 2018 20:43:31 GMT-0800 (PST)
-[debug] [2018-01-11T04:43:31.536Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-11T04:43:31.556Z] TypeError: Cannot read property 'public' of undefined
-    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
-    at Server.g (events.js:292:16)
-    at emitNone (events.js:86:13)
-    at Server.emit (events.js:185:7)
-    at emitListeningNT (net.js:1288:10)
-    at _combinedTickCallback (internal/process/next_tick.js:77:11)
-    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
-[error] 
-[error] Error: An unexpected error has occurred.
-[debug] [2018-01-11T04:48:04.943Z] ----------------------------------------------------------------------
-[debug] [2018-01-11T04:48:04.948Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --debug
-[debug] [2018-01-11T04:48:04.949Z] CLI Version:   3.16.0
-[debug] [2018-01-11T04:48:04.949Z] Platform:      darwin
-[debug] [2018-01-11T04:48:04.949Z] Node Version:  v6.11.4
-[debug] [2018-01-11T04:48:04.950Z] Time:          Wed Jan 10 2018 20:48:04 GMT-0800 (PST)
-[debug] [2018-01-11T04:48:04.950Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-01-11T04:48:04.964Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-01-11T04:48:04.964Z] > authorizing via signed-in user
-[debug] [2018-01-11T04:48:04.967Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/berlin-83c24  
-  
- Wed Jan 10 2018 20:48:04 GMT-0800 (PST)
-[debug] [2018-01-11T04:48:05.632Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-11T04:48:05.634Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/berlin-83c24/tokens  
-  
- Wed Jan 10 2018 20:48:05 GMT-0800 (PST)
-[debug] [2018-01-11T04:48:06.249Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from '/Users/taoong/Desktop/Projects/Websites/berlin-paint/admin'...
-[info] 
-[debug] [2018-01-11T04:48:06.252Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/berlin-83c24  
-  
- Wed Jan 10 2018 20:48:06 GMT-0800 (PST)
-[debug] [2018-01-11T04:48:06.726Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-11T04:48:06.727Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/301683329371/clients/_:getWebAppConfig  
-  
- Wed Jan 10 2018 20:48:06 GMT-0800 (PST)
-[debug] [2018-01-11T04:48:07.172Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-11T04:48:07.194Z] TypeError: Cannot read property 'public' of undefined
-    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
-    at Server.g (events.js:292:16)
-    at emitNone (events.js:86:13)
-    at Server.emit (events.js:185:7)
-    at emitListeningNT (net.js:1288:10)
-    at _combinedTickCallback (internal/process/next_tick.js:77:11)
-    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
-[error] 
-[error] Error: An unexpected error has occurred.
-[debug] [2018-01-12T21:14:58.230Z] ----------------------------------------------------------------------
-[debug] [2018-01-12T21:14:58.233Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2018-01-12T21:14:58.233Z] CLI Version:   3.16.0
-[debug] [2018-01-12T21:14:58.233Z] Platform:      darwin
-[debug] [2018-01-12T21:14:58.233Z] Node Version:  v6.11.4
-[debug] [2018-01-12T21:14:58.234Z] Time:          Fri Jan 12 2018 13:14:58 GMT-0800 (PST)
-[debug] [2018-01-12T21:14:58.234Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-01-12T21:14:58.249Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-01-12T21:14:58.249Z] > authorizing via signed-in user
-[debug] [2018-01-12T21:14:58.253Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/berlin-83c24  
-  
- Fri Jan 12 2018 13:14:58 GMT-0800 (PST)
-[debug] [2018-01-12T21:14:58.773Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-12T21:14:58.774Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/berlin-83c24/tokens  
-  
- Fri Jan 12 2018 13:14:58 GMT-0800 (PST)
-[debug] [2018-01-12T21:14:59.246Z] <<< HTTP RESPONSE 200
+ Sun Jan 14 2018 09:17:56 GMT-0800 (PST)
+[debug] [2018-01-14T17:18:41.476Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/taoong/Desktop/Projects/Websites/berlin-paint'...
 [info] 
-[debug] [2018-01-12T21:14:59.249Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/berlin-83c24  
+[debug] [2018-01-14T17:18:41.480Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/berlin-83c24  
   
- Fri Jan 12 2018 13:14:59 GMT-0800 (PST)
-[debug] [2018-01-12T21:14:59.745Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-12T21:14:59.746Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/301683329371/clients/_:getWebAppConfig  
+ Sun Jan 14 2018 09:18:41 GMT-0800 (PST)
+[debug] [2018-01-14T17:18:43.627Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-14T17:18:43.628Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/301683329371/clients/_:getWebAppConfig  
   
- Fri Jan 12 2018 13:14:59 GMT-0800 (PST)
-[debug] [2018-01-12T21:15:00.205Z] <<< HTTP RESPONSE 200
+ Sun Jan 14 2018 09:18:43 GMT-0800 (PST)
+[debug] [2018-01-14T17:18:45.059Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5000
 
