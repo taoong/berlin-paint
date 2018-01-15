@@ -1,16 +1,9 @@
-// Initialize Firebase
 
 (function() {
 
   var dbOrders = firebase.database().ref().child('orders/');
 
   var ordersTable = $('#orders').DataTable();
-
-  $('#orders').on( 'click', 'tbody td:not(:first-child)', function (e) {
-        editor.inline( this, {
-            onBlur: 'submit'
-        } );
-    } );
 
   dbOrders.on("child_added", snap => {
     var dataset = [snap.child("order_date").val(), snap.child("item_id").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("type").val(), snap.child("order_status").val()];
