@@ -4,9 +4,9 @@ $(document).ready(function () {
     table.MakeCellsEditable({
         "onUpdate": myCallbackFunction,
         "inputCss":'my-input-class',
-        "columns": [0,1,2,3],
+        "columns": [5],
         "allowNulls": {
-            "columns": [3],
+            "columns": [5],
             "errorClass": 'error'
         },
         "confirmationButton": { // could also be true
@@ -15,25 +15,14 @@ $(document).ready(function () {
         },
         "inputTypes": [
             {
-                "column": 0,
-                "type": "text",
-                "options": null
-            },
-            {
-                "column":1, 
+                "column": 5, 
                 "type": "list",
                 "options":[
-                    { "value": "1", "display": "Beaty" },
-                    { "value": "2", "display": "Doe" },
-                    { "value": "3", "display": "Dirt" }
+                    { "value": "Processing Order", "display": "Processing Order" },
+                    { "value": "Manufacturing Paint", "display": "Manufacturing Paint" },
+                    { "value": "Delivering", "display": "Delivering" },
+                    { "value": "Completed", "display": "Completed" }
                 ]
-            },
-            {
-                "column": 2,
-                "type": "datepicker", // requires jQuery UI: http://http://jqueryui.com/download/
-                "options": {
-                    "icon": "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif" // Optional
-                }
             }
              // Nothing specified for column 3 so it will default to text
             
@@ -43,6 +32,7 @@ $(document).ready(function () {
 });
 
 function myCallbackFunction (updatedCell, updatedRow, oldValue) {
+    var ref = firebase.database().ref().child('orders');
     console.log("The new value for the cell is: " + updatedCell.data());
     console.log("The old value for that cell was: " + oldValue);
     console.log("The values for each cell in that row are: " + updatedRow.data());

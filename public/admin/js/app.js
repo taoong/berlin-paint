@@ -6,7 +6,7 @@
   var ordersTable = $('#orders').DataTable();
 
   dbOrders.on("child_added", snap => {
-    var dataset = [snap.child("order_date").val(), snap.child("item_id").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("type").val(), snap.child("order_status").val()];
+    var dataset = [snap.child("order_id").val(), snap.child("order_date").val(), snap.child("item_id").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("type").val(), snap.child("order_status").val()];
     ordersTable.rows.add([dataset]).draw();
   });
 
@@ -24,6 +24,7 @@
 
         var orderID = dbOrders.push().key;
         var data = {
+          order_id: orderID,
           order_date: new Date().toJSON().slice(0,10),
           item_id: $scope.itemID,
           name: $scope.itemName,
@@ -33,7 +34,6 @@
           description: $scope.orderDescription,
           reviewed: false
         }
-        console.log(new Date().toJSON().slice(0,10));
         var updates = {};
         updates['/orders/' + orderID] = data;
         firebase.database().ref().update(updates);

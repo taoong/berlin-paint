@@ -1,0 +1,41 @@
+[debug] [2018-01-16T01:04:32.163Z] ----------------------------------------------------------------------
+[debug] [2018-01-16T01:04:32.166Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-01-16T01:04:32.167Z] CLI Version:   3.16.0
+[debug] [2018-01-16T01:04:32.167Z] Platform:      darwin
+[debug] [2018-01-16T01:04:32.167Z] Node Version:  v6.11.4
+[debug] [2018-01-16T01:04:32.167Z] Time:          Mon Jan 15 2018 17:04:32 GMT-0800 (PST)
+[debug] [2018-01-16T01:04:32.167Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-16T01:04:32.181Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-16T01:04:32.182Z] > authorizing via signed-in user
+[debug] [2018-01-16T01:04:32.184Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-01-16T01:04:32.184Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/O9Xt8fxsf1aptXIlJTrtrBfUrNNyGyEVf2-gbXKjOz4',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Jan 15 2018 17:04:32 GMT-0800 (PST)
+[debug] [2018-01-16T01:04:32.371Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-16T01:04:32.386Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/berlin-83c24  
+  
+ Mon Jan 15 2018 17:04:32 GMT-0800 (PST)
+[debug] [2018-01-16T01:04:32.874Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-16T01:04:32.876Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/berlin-83c24/tokens  
+  
+ Mon Jan 15 2018 17:04:32 GMT-0800 (PST)
+[debug] [2018-01-16T01:04:33.464Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/taoong/Desktop/Projects/Websites/berlin-paint'...
+[info] 
+[debug] [2018-01-16T01:04:33.467Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/berlin-83c24  
+  
+ Mon Jan 15 2018 17:04:33 GMT-0800 (PST)
+[debug] [2018-01-16T01:04:33.978Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-16T01:04:33.978Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/301683329371/clients/_:getWebAppConfig  
+  
+ Mon Jan 15 2018 17:04:33 GMT-0800 (PST)
+[debug] [2018-01-16T01:04:34.592Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
