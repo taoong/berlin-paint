@@ -24,18 +24,18 @@ $(document).ready(function () {
                     { "value": "Completed", "display": "Completed" }
                 ]
             }
-             // Nothing specified for column 3 so it will default to text
-            
         ]
     });
 
 });
 
 function myCallbackFunction (updatedCell, updatedRow, oldValue) {
-    var ref = firebase.database().ref().child('orders');
+    
+    var orderID = updatedRow.data()[0];
+    firebase.database().ref().child('orders/' + orderID).update({ order_status: updatedCell.data() });
     console.log("The new value for the cell is: " + updatedCell.data());
     console.log("The old value for that cell was: " + oldValue);
-    console.log("The values for each cell in that row are: " + updatedRow.data());
+    console.log("The values for each cell in that row are: " + updatedRow.data()[0]);
 }
 
 function destroyTable() {

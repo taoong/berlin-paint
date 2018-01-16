@@ -6,11 +6,9 @@
   var ordersTable = $('#orders').DataTable();
 
   dbOrders.on("child_added", snap => {
-    var dataset = [snap.child("order_id").val(), snap.child("order_date").val(), snap.child("item_id").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("type").val(), snap.child("order_status").val()];
+    var dataset = [snap.child("order_id").val(), snap.child("order_date").val(), snap.child("item_id").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("order_status").val()];
     ordersTable.rows.add([dataset]).draw();
   });
-
-
 
   angular
     .module("app", ['firebase'])
