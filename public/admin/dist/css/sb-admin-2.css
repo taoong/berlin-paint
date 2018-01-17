@@ -456,3 +456,11 @@ table.dataTable thead .sorting:after {
     border-left-width: 0;
   }
 }
+
+#logo {
+  height: 120%;
+  width: 20%;
+  margin-top: -3px;
+  padding-right: 10px;
+  float: left;
+}
