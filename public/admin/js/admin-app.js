@@ -16,7 +16,9 @@
     // Showing unreviewed orders on admin-index.html
     if (snap.child("reviewed").val() == false) {
       unreviewed += 1;
-      unreviewedOrders.innerText = unreviewed;
+      if (unreviewedOrders != null) {
+        unreviewedOrders.innerText = unreviewed;
+      }
     }
   });
 
