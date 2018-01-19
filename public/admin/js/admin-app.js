@@ -28,7 +28,6 @@
     .controller("myCtrl", function($scope) {
       // Getting emails for users when adding orders
       $scope.emails = [];
-      var test = document.getElementById('test');
       var dbUsers = firebase.database().ref().child('users/');
       dbUsers.orderByChild("email").on("child_added", snap => {
         var email = snap.val().email;
