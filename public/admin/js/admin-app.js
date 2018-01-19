@@ -13,6 +13,7 @@
   dbOrders.on("child_added", snap => {
     var dataset = [snap.child("order_id").val(), snap.child("order_date").val(), snap.child("user").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("order_status").val()];
     ordersTable.rows.add([dataset]).draw();
+    ordersTable.columns.adjust().draw();
     // Showing unreviewed orders on admin-index.html
     if (snap.child("reviewed").val() == false) {
       unreviewed += 1;
