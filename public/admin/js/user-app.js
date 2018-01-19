@@ -1,14 +1,29 @@
 
 (function() {
 
+  var currentUserEmail = firebase.auth().currentUser;
+
+  // Getting orders involving user in order table
+  firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        currentUserEmail = user.email;
+        console.log(currentUserEmail);
+        dbOrders.orderByChild("user").equalTo(currentUserEmail).on("child_added", snap => {
+          console.log(snap.val());
+
+          var dataset = [snap.child("order_id").val(), snap.child("order_date").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("order_status").val(), snap.child("reviewed").val()];
+          ordersTable.rows.add([dataset]).draw();
+        });
+      } else {
+        console.log("USED SHOULD BE LOGGED IN BUT ISN'T");
+      }
+    });
+
   var dbOrders = firebase.database().ref().child('orders/');
 
   var ordersTable = $('#user-orders').DataTable();
 
-  dbOrders.on("child_added", snap => {
-    var dataset = [snap.child("order_id").val(), snap.child("order_date").val(), snap.child("user").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("order_status").val()];
-    ordersTable.rows.add([dataset]).draw();
-  });
+  
 
   
 
