@@ -7,34 +7,29 @@
 
   var userOrders = [];
 
-  // Getting orders involving user in order table
-  firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        currentUserEmail = user.email;
-        dbOrders.orderByChild("user").equalTo(currentUserEmail).on("child_added", snap => {
-          var dataset = [snap.child("order_id").val(), snap.child("order_date").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("order_status").val(), snap.child("reviewed").val()];
-          ordersTable.rows.add([dataset]).draw();
-          if (snap.child("reviewed").val() == false) {
-            userOrders.push(snap.val());
-          }
-        });
-      } else {
-        console.log("USED SHOULD BE LOGGED IN BUT ISN'T");
-      }
-    });
-
   var ordersTable = $('#user-orders').DataTable();
 
-  
-
-  
-
   angular
-    .module("app", ['firebase'])
+    .module("app", [])
     .controller("myCtrl", function($scope) {
-      // Getting all unreviewed orders
-      $scope.userOrders = userOrders;
-      console.log(userOrders);
+      $scope.userOrders = [];
+      // Getting orders involving user in order table
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          currentUserEmail = user.email;
+          dbOrders.orderByChild("user").equalTo(currentUserEmail).on("child_added", snap => {
+            var dataset = [snap.child("order_id").val(), snap.child("order_date").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("order_status").val(), snap.child("reviewed").val()];
+            ordersTable.rows.add([dataset]).draw();
+            // Getting unreviewed orders
+            if (snap.child("reviewed").val() == false) {
+              $scope.userOrders.push(snap.val());
+              $scope.$digest();
+            }
+          });
+        } else {
+          console.log("USED SHOULD BE LOGGED IN BUT ISN'T");
+        }
+      });
 
       // Adding orders
       $scope.addItem = function () {
