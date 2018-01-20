@@ -58,6 +58,11 @@
         alert('The order was added to the database.');
         window.location.reload();
       }
+
+      // Confirmed order
+      $scope.confirmOrder = function() {
+        
+      }
     });
 
 
