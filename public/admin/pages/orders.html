@@ -218,7 +218,6 @@
                                         <th>Item Name</th>
                                         <th>Quantity</th>
                                         <th>Order Status</th>
-                                        <th>Reviewed</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -273,7 +272,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                            <button ng-click="confirmOrder()" type="submit" class="btn btn-primary">Confirm Order</button>
+                                            <button ng-click="confirmOrder(order.order_id)" type="submit" class="btn btn-primary">Confirm Order</button>
                                         </div>
                                     </div>
                                     <!-- /.modal-content -->

@@ -5,6 +5,10 @@
 
   var dbOrders = firebase.database().ref().child('orders/');
 
+  var unreviewed = 0;
+
+  var unreviewedOrders = document.getElementById('unreviewedOrders');
+
   var userOrders = [];
 
   var ordersTable = $('#user-orders').DataTable();
@@ -18,12 +22,21 @@
         if (user) {
           currentUserEmail = user.email;
           dbOrders.orderByChild("user").equalTo(currentUserEmail).on("child_added", snap => {
-            var dataset = [snap.child("order_id").val(), snap.child("order_date").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("order_status").val(), snap.child("reviewed").val()];
-            ordersTable.rows.add([dataset]).draw();
             // Getting unreviewed orders
             if (snap.child("reviewed").val() == false) {
+              // Showing unreviewed orders on index.html
+              unreviewed += 1;
+              if (unreviewedOrders != null) {
+                unreviewedOrders.innerText = unreviewed;
+                console.log(unreviewed);
+              }
+              // Showing unreviewed orders on orders.html
               $scope.userOrders.push(snap.val());
               $scope.$digest();
+              return;
+            } else {
+              var dataset = [snap.child("order_id").val(), snap.child("order_date").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("order_status").val()];
+              ordersTable.rows.add([dataset]).draw();
             }
           });
         } else {
@@ -60,8 +73,9 @@
       }
 
       // Confirmed order
-      $scope.confirmOrder = function() {
-        
+      $scope.confirmOrder = function(id) {
+        firebase.database().ref("orders/" + id).update({ reviewed: true });
+        window.location.reload();
       }
     });
 
