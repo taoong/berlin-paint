@@ -9,6 +9,10 @@
 
   var unreviewedOrders = document.getElementById('unreviewedOrders');
 
+  if (unreviewedOrders != null) {
+    unreviewedOrders.innerText = unreviewed;
+  }
+
   // Drawing rows on DataTable
   dbOrders.on("child_added", snap => {
     var dataset = [snap.child("order_id").val(), snap.child("order_date").val(), snap.child("user").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("order_status").val()];

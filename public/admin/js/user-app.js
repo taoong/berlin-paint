@@ -9,6 +9,19 @@
 
   var unreviewedOrders = document.getElementById('unreviewedOrders');
 
+  if (unreviewedOrders != null) {
+    unreviewedOrders.innerText = unreviewed;
+    dbOrders.on("child_added", snap => {
+      // Showing unreviewed orders on index.html
+      if (snap.child("reviewed").val() == false) {
+        unreviewed += 1;
+        if (unreviewedOrders != null) {
+          unreviewedOrders.innerText = unreviewed;
+        }
+      }
+    });
+  }
+
   var userOrders = [];
 
   var ordersTable = $('#user-orders').DataTable();
@@ -24,12 +37,6 @@
           dbOrders.orderByChild("user").equalTo(currentUserEmail).on("child_added", snap => {
             // Getting unreviewed orders
             if (snap.child("reviewed").val() == false) {
-              // Showing unreviewed orders on index.html
-              unreviewed += 1;
-              if (unreviewedOrders != null) {
-                unreviewedOrders.innerText = unreviewed;
-                console.log(unreviewed);
-              }
               // Showing unreviewed orders on orders.html
               $scope.userOrders.push(snap.val());
               $scope.$digest();
@@ -37,12 +44,15 @@
             } else {
               var dataset = [snap.child("order_id").val(), snap.child("order_date").val(), snap.child("name").val(), snap.child("quantity").val(), snap.child("order_status").val()];
               ordersTable.rows.add([dataset]).draw();
+              ordersTable.columns.adjust().draw();
             }
           });
         } else {
           console.log("USED SHOULD BE LOGGED IN BUT ISN'T");
         }
       });
+
+
 
       // Adding orders
       $scope.addItem = function () {
