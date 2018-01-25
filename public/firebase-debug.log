@@ -1,0 +1,26 @@
+[debug] [2018-01-25T18:07:59.617Z] ----------------------------------------------------------------------
+[debug] [2018-01-25T18:07:59.621Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-01-25T18:07:59.621Z] CLI Version:   3.16.0
+[debug] [2018-01-25T18:07:59.621Z] Platform:      darwin
+[debug] [2018-01-25T18:07:59.621Z] Node Version:  v6.11.4
+[debug] [2018-01-25T18:07:59.622Z] Time:          Thu Jan 25 2018 10:07:59 GMT-0800 (PST)
+[debug] [2018-01-25T18:07:59.622Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-25T18:07:59.636Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-25T18:07:59.636Z] > authorizing via signed-in user
+[debug] [2018-01-25T18:07:59.639Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/berlin-83c24  
+  
+ Thu Jan 25 2018 10:07:59 GMT-0800 (PST)
+[debug] [2018-01-25T18:08:00.036Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-25T18:08:00.037Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/berlin-83c24/tokens  
+  
+ Thu Jan 25 2018 10:08:00 GMT-0800 (PST)
+[debug] [2018-01-25T18:08:00.438Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'berlin-83c24'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing public directory for upload...
+[debug] [2018-01-25T18:08:23.293Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/berlin-83c24/uploads/-L3iVHm6C9kJc5pfEibn?fileCount=280&message=  
+  
+ Thu Jan 25 2018 10:08:23 GMT-0800 (PST)
