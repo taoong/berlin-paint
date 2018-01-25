@@ -5,19 +5,25 @@
 
   var dbOrders = firebase.database().ref().child('orders/');
 
+  var reviewed = 0;
+
   var unreviewed = 0;
+
+  var reviewedOrders = document.getElementById('reviewedOrders');
 
   var unreviewedOrders = document.getElementById('unreviewedOrders');
 
-  if (unreviewedOrders != null) {
+  if (reviewedOrders != null && unreviewedOrders != null) {
+    reviewedOrders.innerText = reviewed;
     unreviewedOrders.innerText = unreviewed;
     dbOrders.on("child_added", snap => {
       // Showing unreviewed orders on index.html
       if (snap.child("reviewed").val() == false) {
         unreviewed += 1;
-        if (unreviewedOrders != null) {
-          unreviewedOrders.innerText = unreviewed;
-        }
+        unreviewedOrders.innerText = unreviewed;
+      } else {
+        reviewed += 1;
+        reviewedOrders.innerText = reviewed;
       }
     });
   }
