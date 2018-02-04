@@ -18,6 +18,7 @@ $(document).ready(function () {
                 "column": 5, 
                 "type": "list",
                 "options":[
+                    { "value": "Waiting for Payment", "display": "Waiting for Payment" },
                     { "value": "Processing Order", "display": "Processing Order" },
                     { "value": "Manufacturing Paint", "display": "Manufacturing Paint" },
                     { "value": "Delivering", "display": "Delivering" },

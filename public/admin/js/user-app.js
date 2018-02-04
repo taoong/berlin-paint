@@ -38,7 +38,22 @@
       $("#product_name").text(ordersTable.row(this).data()[2]);
       orderStatus = ordersTable.row(this).data()[4];
       if (orderStatus == "Processing Order") {
+        $("#paymentReceived").addClass("success");
+      }
+      if (orderStatus == "Manufacturing Paint") {
+        $("#paymentReceived").addClass("success");
         $("#orderProcessed").addClass("success");
+      }
+      if (orderStatus == "Delivering") {
+        $("#paymentReceived").addClass("success");
+        $("#orderProcessed").addClass("success");
+        $("#paintManufactured").addClass("success");
+      }
+      if (orderStatus == "Completed") {
+        $("#paymentReceived").addClass("success");
+        $("#orderProcessed").addClass("success");
+        $("#paintManufactured").addClass("success");
+        $("#orderDelivered").addClass("success");
       }
       $('#DescModal').modal("show");
     });
