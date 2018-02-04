@@ -33,8 +33,7 @@
   var ordersTable = $('#user-orders').DataTable();
 
   ordersTable.on('click', 'tr', function () {
-      $("#company-full-name").val(ordersTable.row(this).data()[1]);
-      $("#company-short-name").val(ordersTable.row(this).data()[2]);
+      $("#product_name").text(ordersTable.row(this).data()[2]);
       $('#DescModal').modal("show");
     });
 
