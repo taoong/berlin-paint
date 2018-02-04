@@ -32,6 +32,12 @@
 
   var ordersTable = $('#user-orders').DataTable();
 
+  ordersTable.on('click', 'tr', function () {
+      $("#company-full-name").val(companyTable.row(this).data()[1]);
+      $("#company-short-name").val(companyTable.row(this).data()[2]);
+      $('#DescModal').modal("show");
+    });
+
   angular
     .module("app", [])
     .controller("myCtrl", function($scope) {
