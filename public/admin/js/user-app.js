@@ -32,8 +32,14 @@
 
   var ordersTable = $('#user-orders').DataTable();
 
+  var orderStatus;
+
   ordersTable.on('click', 'tr', function () {
       $("#product_name").text(ordersTable.row(this).data()[2]);
+      orderStatus = ordersTable.row(this).data()[4];
+      if (orderStatus == "Processing Order") {
+        $("#orderProcessed").addClass("success");
+      }
       $('#DescModal').modal("show");
     });
 
