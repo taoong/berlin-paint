@@ -34,7 +34,10 @@
 
   var orderStatus;
 
+  var modalClone = $("#DescModal").clone();
+
   ordersTable.on('click', 'tr', function () {
+      $("#DescModal").replaceWith(modalClone.clone());
       $("#product_name").text(ordersTable.row(this).data()[2]);
       orderStatus = ordersTable.row(this).data()[4];
       if (orderStatus == "Processing Order") {
