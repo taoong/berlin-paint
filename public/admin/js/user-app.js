@@ -39,21 +39,31 @@
       orderStatus = ordersTable.row(this).data()[4];
       if (orderStatus == "Processing Order") {
         $("#paymentReceived").addClass("success");
+        $("#paymentReceivedTitle").text("Payment Received");
       }
       if (orderStatus == "Manufacturing Paint") {
         $("#paymentReceived").addClass("success");
+        $("#paymentReceivedTitle").text("Payment Received");
         $("#orderProcessed").addClass("success");
+        $("#orderProcessedTitle").text("Order Processed");
       }
       if (orderStatus == "Delivering") {
         $("#paymentReceived").addClass("success");
+        $("#paymentReceivedTitle").text("Payment Received");
         $("#orderProcessed").addClass("success");
+        $("#orderProcessedTitle").text("Order Processed");
         $("#paintManufactured").addClass("success");
+        $("#paintManufacturedTitle").text("Paint Manufactured");
       }
       if (orderStatus == "Completed") {
         $("#paymentReceived").addClass("success");
+        $("#paymentReceivedTitle").text("Payment Received");
         $("#orderProcessed").addClass("success");
+        $("#orderProcessedTitle").text("Order Processed");
         $("#paintManufactured").addClass("success");
+        $("#paintManufacturedTitle").text("Paint Manufactured");
         $("#orderDelivered").addClass("success");
+        $("#orderDeliveredTitle").text("Order Delivered");
       }
       $('#DescModal').modal("show");
     });
