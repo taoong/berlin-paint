@@ -40,30 +40,40 @@
       if (orderStatus == "Processing Order") {
         $("#paymentReceived").addClass("success");
         $("#paymentReceivedTitle").text("Payment Received");
+        $("#paymentReceivedDesc").text("Great! Your payment has been received by us.");
       }
       if (orderStatus == "Manufacturing Paint") {
         $("#paymentReceived").addClass("success");
         $("#paymentReceivedTitle").text("Payment Received");
+        $("#paymentReceivedDesc").text("Great! Your payment has been received by us.");
         $("#orderProcessed").addClass("success");
         $("#orderProcessedTitle").text("Order Processed");
+        $("#orderProcessedDesc").text("Your order has been fully processed and our factory is ready to start on your order.");
       }
       if (orderStatus == "Delivering") {
         $("#paymentReceived").addClass("success");
         $("#paymentReceivedTitle").text("Payment Received");
+        $("#paymentReceivedDesc").text("Great! Your payment has been received by us.");
         $("#orderProcessed").addClass("success");
         $("#orderProcessedTitle").text("Order Processed");
+        $("#orderProcessedDesc").text("Your order has been fully processed and our factory is ready to start on your order.");
         $("#paintManufactured").addClass("success");
         $("#paintManufacturedTitle").text("Paint Manufactured");
+        $("#paintManufacturedDesc").text("Your product was successfully manufactured - all that is left is for us to bring it to you.");
       }
       if (orderStatus == "Completed") {
         $("#paymentReceived").addClass("success");
         $("#paymentReceivedTitle").text("Payment Received");
+        $("#paymentReceivedDesc").text("Great! Your payment has been received by us.");
         $("#orderProcessed").addClass("success");
         $("#orderProcessedTitle").text("Order Processed");
+        $("#orderProcessedDesc").text("Your order has been fully processed and our factory is ready to start on your order.");
         $("#paintManufactured").addClass("success");
         $("#paintManufacturedTitle").text("Paint Manufactured");
+        $("#paintManufacturedDesc").text("Your product was successfully manufactured - all that is left is for us to bring it to you.");
         $("#orderDelivered").addClass("success");
         $("#orderDeliveredTitle").text("Order Delivered");
+        $("#orderDeliveredDesc").text("The order was delivered and closed!");
       }
       $('#DescModal').modal("show");
     });
