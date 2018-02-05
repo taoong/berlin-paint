@@ -35,7 +35,8 @@
       var dbUsers = firebase.database().ref().child('users/');
       dbUsers.orderByChild("email").on("child_added", snap => {
         var email = snap.val().email;
-        $scope.emails.push(email);
+        var company = snap.val().company_name;
+        $scope.emails.push(email + " (" + company + ")");
       });
       // Adding orders
       $scope.addItem = function () {
@@ -49,7 +50,7 @@
         var data = {
           order_id: orderID,
           order_date: new Date().toJSON().slice(0,10),
-          user: ($scope.user).trim(),
+          user: ($scope.user).trim().split(" ")[0],
           item_id: $scope.itemID,
           name: $scope.itemName,
           quantity: $scope.itemQuantity,

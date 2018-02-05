@@ -12,6 +12,7 @@
   firebase.initializeApp(config);
 
   // Get elements
+  const txtCompany = document.getElementById('txtCompany');
   const txtEmail = document.getElementById('txtEmail');
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
@@ -49,17 +50,23 @@
 
   // Add change to sign up event
   $("#changeToSignUp").on('click', function() {
+    $('#loginTitle').text("Sign Up for a New Account");
+    $('#txtCompany').css("display", "block");
     $('#btnLogin').css("display", "none");
-    $('#btnSignup').css("display", "inline");
+    $('#btnSignup').css("display", "block");
     $('#signUpText').css("display", "none");
-    $('#logInText').css("display", "inline");
+    $('#logInText').css("display", "block");
+    $('#errorMessage').css("visibility", "hidden");
   })
 
   $("#changeToLogIn").on('click', function() {
-    $('#btnLogin').css("display", "inline");
+    $('#loginTitle').text("Please Log In");
+    $('#txtCompany').css("display", "none");
+    $('#btnLogin').css("display", "block");
     $('#btnSignup').css("display", "none");
-    $('#signUpText').css("display", "inline");
+    $('#signUpText').css("display", "block");
     $('#logInText').css("display", "none");
+    $('#errorMessage').css("visibility", "hidden");
   })
 
 
@@ -75,6 +82,7 @@
         if (!exists) {
           var newUser = {
             user_id: userID,
+            company_name: txtCompany.value,
             email: firebaseUser.email,
             emailVerified: firebaseUser.emailVerified,
             dateCreated: new Date().toJSON().slice(0,10),
