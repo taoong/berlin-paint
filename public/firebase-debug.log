@@ -1,41 +1,41 @@
-[debug] [2018-02-04T05:54:59.179Z] ----------------------------------------------------------------------
-[debug] [2018-02-04T05:54:59.182Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2018-02-04T05:54:59.183Z] CLI Version:   3.16.0
-[debug] [2018-02-04T05:54:59.183Z] Platform:      darwin
-[debug] [2018-02-04T05:54:59.183Z] Node Version:  v6.11.4
-[debug] [2018-02-04T05:54:59.183Z] Time:          Sat Feb 03 2018 21:54:59 GMT-0800 (PST)
-[debug] [2018-02-04T05:54:59.183Z] ----------------------------------------------------------------------
+[debug] [2018-02-05T07:22:02.496Z] ----------------------------------------------------------------------
+[debug] [2018-02-05T07:22:02.498Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-02-05T07:22:02.499Z] CLI Version:   3.16.0
+[debug] [2018-02-05T07:22:02.499Z] Platform:      darwin
+[debug] [2018-02-05T07:22:02.499Z] Node Version:  v6.11.4
+[debug] [2018-02-05T07:22:02.499Z] Time:          Sun Feb 04 2018 23:22:02 GMT-0800 (PST)
+[debug] [2018-02-05T07:22:02.500Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-02-04T05:54:59.201Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-02-04T05:54:59.201Z] > authorizing via signed-in user
-[debug] [2018-02-04T05:54:59.203Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-02-04T05:54:59.203Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2018-02-05T07:22:02.515Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-05T07:22:02.516Z] > authorizing via signed-in user
+[debug] [2018-02-05T07:22:02.518Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-05T07:22:02.518Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  { refresh_token: '1/O9Xt8fxsf1aptXIlJTrtrBfUrNNyGyEVf2-gbXKjOz4',
   client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
   client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
   grant_type: 'refresh_token',
   scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Sat Feb 03 2018 21:54:59 GMT-0800 (PST)
-[debug] [2018-02-04T05:54:59.342Z] <<< HTTP RESPONSE 200
-[debug] [2018-02-04T05:54:59.359Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/berlin-83c24  
+ Sun Feb 04 2018 23:22:02 GMT-0800 (PST)
+[debug] [2018-02-05T07:22:02.680Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-05T07:22:02.694Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/berlin-83c24  
   
- Sat Feb 03 2018 21:54:59 GMT-0800 (PST)
-[debug] [2018-02-04T05:54:59.862Z] <<< HTTP RESPONSE 200
-[debug] [2018-02-04T05:54:59.864Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/berlin-83c24/tokens  
+ Sun Feb 04 2018 23:22:02 GMT-0800 (PST)
+[debug] [2018-02-05T07:22:03.175Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-05T07:22:03.176Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/berlin-83c24/tokens  
   
- Sat Feb 03 2018 21:54:59 GMT-0800 (PST)
-[debug] [2018-02-04T05:55:00.257Z] <<< HTTP RESPONSE 200
+ Sun Feb 04 2018 23:22:03 GMT-0800 (PST)
+[debug] [2018-02-05T07:22:17.576Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/taoong/Desktop/Projects/Websites/berlin-paint'...
 [info] 
-[debug] [2018-02-04T05:55:00.261Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/berlin-83c24  
+[debug] [2018-02-05T07:22:17.580Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/berlin-83c24  
   
- Sat Feb 03 2018 21:55:00 GMT-0800 (PST)
-[debug] [2018-02-04T05:55:00.704Z] <<< HTTP RESPONSE 200
-[debug] [2018-02-04T05:55:00.704Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/301683329371/clients/_:getWebAppConfig  
+ Sun Feb 04 2018 23:22:17 GMT-0800 (PST)
+[debug] [2018-02-05T07:22:17.969Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-05T07:22:17.970Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/301683329371/clients/_:getWebAppConfig  
   
- Sat Feb 03 2018 21:55:00 GMT-0800 (PST)
-[debug] [2018-02-04T05:55:01.115Z] <<< HTTP RESPONSE 200
+ Sun Feb 04 2018 23:22:17 GMT-0800 (PST)
+[debug] [2018-02-05T07:22:18.363Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5000
 

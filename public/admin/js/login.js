@@ -29,8 +29,8 @@
     // Sign in
     const promise = auth.signInWithEmailAndPassword(email, pass);
     promise.catch(e => {
-      console.log(e.message);
-      document.getElementById('errorMessage').innerHTML = e.message;
+      $('#errorMessage').css("visibility", "visible");
+      document.getElementById('errorMessage').innerHTML = "Error: " + e.message;
     });
   })
 
@@ -42,7 +42,8 @@
     // Sign in
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => {
-      document.getElementById('errorMessage').innerHTML = e.message;
+      $('#errorMessage').css("visibility", "visible");
+      document.getElementById('errorMessage').innerHTML = "Error: " + e.message;
     });
   })
 
