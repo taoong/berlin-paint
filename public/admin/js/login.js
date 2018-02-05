@@ -47,6 +47,23 @@
     });
   })
 
+  // Add change to sign up event
+  $("#changeToSignUp").on('click', function() {
+    $('#btnLogin').css("display", "none");
+    $('#btnSignup').css("display", "inline");
+    $('#signUpText').css("display", "none");
+    $('#logInText').css("display", "inline");
+  })
+
+  $("#changeToLogIn").on('click', function() {
+    $('#btnLogin').css("display", "inline");
+    $('#btnSignup').css("display", "none");
+    $('#signUpText').css("display", "inline");
+    $('#logInText').css("display", "none");
+  })
+
+
+
   // Add a realtime listener
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {

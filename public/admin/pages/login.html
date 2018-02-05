@@ -59,7 +59,8 @@
                             <button id="btnSignup" class="btn btn-lg btn-danger btn-block">Sign up</button>
                         </fieldset>
                     </div>
-                    <p class="login-text-small">Don't have an account? <a>Click here to sign up!</a></p>
+                    <p class="login-text-small" id="signUpText">Don't have an account? <a id="changeToSignUp">Click here to sign up!</a></p>
+                    <p class="login-text-small" id="logInText">Already have an existing account? <a id="changeToLogIn">Click here to log in!</a></p>
                     <p class="login-text-small" id="errorMessage">Berlin Paint</p>
                 </div>
             </div>
@@ -69,11 +70,11 @@
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
-    <!-- Custom JS for Login -->
-    <script src="../js/login.js"></script>
-
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Custom JS for Login -->
+    <script src="../js/login.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>

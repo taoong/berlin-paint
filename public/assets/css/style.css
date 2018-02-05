@@ -537,3 +537,11 @@ csmall2 {
 .btn-outline {
 	border: 1px solid white;
 }
+
+#logInText {
+	display: none;
+}
+
+#btnSignup {
+	display: none;
+}
