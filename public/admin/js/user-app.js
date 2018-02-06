@@ -13,17 +13,22 @@
 
   var unreviewedOrders = document.getElementById('unreviewedOrders');
 
+  // Showing unreviewed orders on index.html
   if (reviewedOrders != null && unreviewedOrders != null) {
-    reviewedOrders.innerText = reviewed;
-    unreviewedOrders.innerText = unreviewed;
-    dbOrders.on("child_added", snap => {
-      // Showing unreviewed orders on index.html
-      if (snap.child("reviewed").val() == false) {
-        unreviewed += 1;
-        unreviewedOrders.innerText = unreviewed;
-      } else {
-        reviewed += 1;
-        reviewedOrders.innerText = reviewed;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        currentUserEmail = user.email;
+        dbOrders.orderByChild("user").equalTo(currentUserEmail).on("child_added", snap => {
+          reviewedOrders.innerText = reviewed;
+          unreviewedOrders.innerText = unreviewed;
+          if (snap.child("reviewed").val() == false) {
+            unreviewed += 1;
+            unreviewedOrders.innerText = unreviewed;
+          } else {
+            reviewed += 1;
+            reviewedOrders.innerText = reviewed;
+          }
+        });
       }
     });
   }
@@ -36,6 +41,7 @@
 
   var modalClone = $("#DescModal").clone();
 
+  // Different cases for order-status modal
   ordersTable.on('click', 'tr', function () {
       $("#DescModal").replaceWith(modalClone.clone());
       $("#product_name").text(ordersTable.row(this).data()[2]);
@@ -106,8 +112,6 @@
           console.log("USED SHOULD BE LOGGED IN BUT ISN'T");
         }
       });
-
-
 
       // Adding orders
       $scope.addItem = function () {
