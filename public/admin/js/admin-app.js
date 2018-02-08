@@ -2,13 +2,10 @@
 (function() {
 
   var dbOrders = firebase.database().ref().child('orders/');
-
   var ordersTable = $('#orders').DataTable();
-
   var unreviewed = 0;
-
   var unreviewedOrders = document.getElementById('unreviewedOrders');
-
+  
   if (unreviewedOrders != null) {
     unreviewedOrders.innerText = unreviewed;
   }
@@ -66,8 +63,5 @@
         window.location.reload();
       }
     });
-
-
-
 }());
   

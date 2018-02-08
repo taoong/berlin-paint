@@ -2,15 +2,14 @@
 (function() {
 
   var currentUserEmail = firebase.auth().currentUser;
-
   var dbOrders = firebase.database().ref().child('orders/');
-
   var reviewed = 0;
-
   var unreviewed = 0;
-
+  var userOrders = [];
+  var ordersTable = $('#user-orders').DataTable();
+  var orderStatus;
+  var modalClone = $("#DescModal").clone();
   var reviewedOrders = document.getElementById('reviewedOrders');
-
   var unreviewedOrders = document.getElementById('unreviewedOrders');
 
   // Showing unreviewed orders on index.html
@@ -32,14 +31,6 @@
       }
     });
   }
-
-  var userOrders = [];
-
-  var ordersTable = $('#user-orders').DataTable();
-
-  var orderStatus;
-
-  var modalClone = $("#DescModal").clone();
 
   // Different cases for order-status modal
   ordersTable.on('click', 'tr', function () {
@@ -147,8 +138,5 @@
         window.location.reload();
       }
     });
-
-
-
 }());
   
